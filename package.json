@@ -7,11 +7,19 @@
     "test": "jest"
   },
   "dependencies": {
+    "babel-preset-react-native": "^4.0.1",
     "react": "16.6.3",
     "react-native": "0.58.4",
     "react-native-deprecated-custom-components": "^0.1.2",
     "react-native-gesture-handler": "^1.0.15",
+    "react-native-tab-navigator": "^0.3.4",
     "react-navigation": "^3.3.0"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.51.1",
+    "react-test-renderer": "16.6.3"
   },
   "jest": {
     "preset": "react-native"

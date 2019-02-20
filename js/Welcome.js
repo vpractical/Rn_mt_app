@@ -33,8 +33,9 @@ export default class Welcome extends Component {
         ToastAndroid.show('3s', ToastAndroid.SHORT);
         countDown = setTimeout(() => {
             console.log("导航到登录页")
-            navigate('Login')
-        },3000);
+            // navigate('Login')
+            navigate('Main')
+        },2000);
     }
 
     componentWillUnmount(): void {
