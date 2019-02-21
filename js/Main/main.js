@@ -25,7 +25,9 @@ export default class Main extends Component {
 
     render() {
         return (
-            <TabNavigator>
+            <TabNavigator
+                // tabBarStyle={{}}
+            >
                 <TabNavigator.Item
                     title="首页"
                     renderIcon={() => <Image source={require('../../res/images/icon_tabbar_homepage.png')}
