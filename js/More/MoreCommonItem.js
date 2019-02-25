@@ -19,7 +19,7 @@ export default class MoreCommonItem extends Component<Props> {
         rightTitle: ''
     }
     rightSubView(){
-        if (this.props.rightIconName === undefined) {
+        if (this.props.rightIconName == undefined) {
             return (
                 <Text style={{color:'gray'}}>
                     {this.props.rightTitle}
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
         backgroundColor:'white',
         alignItems:'center',
-        height:45,
+        height:40,
         borderBottomColor: '#e8e8e8',
         borderBottomWidth:0.5,
     }

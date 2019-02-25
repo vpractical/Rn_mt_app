@@ -1,14 +1,24 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ * @lint-ignore-every XPLATJSCOPYRIGHT1
+ */
+
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,ScrollView,Image} from 'react-native';
 import MoreCommonItem from "./MoreCommonItem";
 import MoreMiddleCommonItem from "./MoreMiddleCommonItem";
-
+import  MoreHeader from './MoreHeader'
 export default class More extends Component<Props> {
     render() {
         return (
             <ScrollView
                 contentContainerStyle={styles.scrollViewStyle}
             >
+                <MoreHeader/>
                 <View style={{marginTop:20}}>
                     <MoreCommonItem
                         leftIconName={require('../../res/images/collect.png')}

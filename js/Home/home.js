@@ -1,9 +1,20 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ * @lint-ignore-every XPLATJSCOPYRIGHT1
+ */
+
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TextInput, Image, StatusBar} from 'react-native';
+import {Platform, StyleSheet, Text, ScrollView, View, TextInput, Image, StatusBar} from 'react-native';
 import HomeDetail from './HomeDetail';
 
-let Dimensions = require('Dimensions');
-let {width, height} = Dimensions.get('window');
+var Dimensions = require('Dimensions')
+var {width, height} = Dimensions.get('window');
+import HomeTopView from './HomeTopView'
+
 export default class Home extends Component<Props> {
     _pressButton() {
         const {navigator} = this.props;
@@ -24,10 +35,11 @@ export default class Home extends Component<Props> {
                     barStyle="light-content"
                 />
                 {this.renderNavBar()}
-                <Text onPress={this._pressButton.bind(this)}>
-                    {/*首页导航栏*/}
-                    Main页面
-                </Text>
+                <ScrollView>
+                    <HomeTopView/>
+                </ScrollView>
+
+
             </View>
         );
     }
@@ -38,10 +50,7 @@ export default class Home extends Component<Props> {
                 <Text>
                     长沙
                 </Text>
-                <TextInput
-                    placeholder="养生" style={styles.topInputStyle}
-                >
-                </TextInput>
+                <TextInput placeholder="养生" style={styles.topInputStyle}></TextInput>
 
                 <View style={{flexDirection: 'row'}}>
                     <Image source={require('../../res/images/icon_homepage_message.png')} style={styles.navRightImg}/>
@@ -66,14 +75,14 @@ const styles = StyleSheet.create({
 
     },
     navRightImg: {
-        width: 25,
-        height: 25
+        width: 30,
+        height: 30
     },
     topInputStyle: {
-        width: width * 0.6,
+        width: width * 0.7,
         height: 40,
         backgroundColor: 'white',
-        borderRadius: 8,
+        borderRadius: 16,
         paddingLeft: 10
     },
     welcome: {
