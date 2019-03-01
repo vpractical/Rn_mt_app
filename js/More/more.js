@@ -11,7 +11,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,ScrollView,Image} from 'react-native';
 import MoreCommonItem from "./MoreCommonItem";
 import MoreMiddleCommonItem from "./MoreMiddleCommonItem";
-import  MoreHeader from './MoreHeader'
+import MoreHeader from "./MoreHeader";
 export default class More extends Component<Props> {
     render() {
         return (

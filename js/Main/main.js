@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     AppRegistry,
     StyleSheet,
@@ -13,41 +13,33 @@ import Find from '../Find/find';
 import Mine from '../Mine/mine';
 import More from '../More/more';
 import {Navigator} from "react-native-deprecated-custom-components"
-
 export default class Main extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
             selectedTab: 'home'  //默认选中主页
         }
     }
-
     render() {
         return (
-            <TabNavigator
-                // tabBarStyle={{}}
-            >
+            <TabNavigator>
                 <TabNavigator.Item
                     title="首页"
-                    renderIcon={() => <Image source={require('../../res/images/icon_tabbar_homepage.png')}
-                                             style={styles.iconStyle}/>}
-                    renderSelectedIcon={() => <Image
-                        source={require('../../res/images/icon_tabbar_homepage_selected.png')}
-                        style={styles.iconStyle}/>}
+                    renderIcon={() => <Image source={require('../../res/images/icon_tabbar_homepage.png')} style={styles.iconStyle} />}
+                    renderSelectedIcon={() => <Image source={require('../../res/images/icon_tabbar_homepage_selected.png')} style={styles.iconStyle} />}
                     selected={this.state.selectedTab === 'home'}
-                    onPress={() => this.setState({selectedTab: 'home'})}
+                    onPress={() => this.setState({ selectedTab: 'home' }) }
                 >
                     <Navigator
                         initialRoute={{
-                            name: "首页",
-                            component: Home
+                            name:"首页",
+                            component:Home
                         }
                         }
                         renderScene={
-                            (router, navigator) => {
-                                let Component = router.component;
-                                return <Component {...router.params} navigator={navigator}/>
+                            (router,navigator)=>{
+                                   let Component= router.component;
+                                   return <Component {...router.params} navigator={navigator}/>
                             }
 
                         }/>
@@ -56,42 +48,35 @@ export default class Main extends Component {
                 <TabNavigator.Item
 
                     title="发现"
-                    renderIcon={() => <Image source={require('../../res/images/icon_tabbar_merchant_normal.png')}
-                                             style={styles.iconStyle}/>}
-                    renderSelectedIcon={() => <Image
-                        source={require('../../res/images/icon_tabbar_merchant_selected.png')}
-                        style={styles.iconStyle}/>}
+                    renderIcon={() => <Image source={require('../../res/images/icon_tabbar_merchant_normal.png')} style={styles.iconStyle} />}
+                    renderSelectedIcon={() => <Image source={require('../../res/images/icon_tabbar_merchant_selected.png')} style={styles.iconStyle} />}
                     selected={this.state.selectedTab === 'shop'}
-                    badgeText='26'
-                    onPress={() => this.setState({selectedTab: 'shop'})}
+                    onPress={() => this.setState({ selectedTab: 'shop' }) }
                 >
 
-                    <Find/>
+                    <Find />
 
+                </TabNavigator.Item>
+
+                <TabNavigator.Item
+
+                    title="我的"
+                    renderIcon={() => <Image source={require('../../res/images/icon_tabbar_mine.png')} style={styles.iconStyle} />}
+                    renderSelectedIcon={() => <Image source={require('../../res/images/icon_tabbar_mine_selected.png')} style={styles.iconStyle} />}
+                    selected={this.state.selectedTab === 'more'}
+                    onPress={() => this.setState({ selectedTab: 'more' }) }
+                >
+                    <More />
                 </TabNavigator.Item>
                 <TabNavigator.Item
 
                     title="订单"
-                    renderIcon={() => <Image source={require('../../res/images/icon_tabbar_mine.png')}
-                                             style={styles.iconStyle}/>}
-                    renderSelectedIcon={() => <Image source={require('../../res/images/icon_tabbar_mine_selected.png')}
-                                                     style={styles.iconStyle}/>}
+                    renderIcon={() => <Image source={require('../../res/images/icon_tabbar_mine.png')} style={styles.iconStyle} />}
+                    renderSelectedIcon={() => <Image source={require('../../res/images/icon_tabbar_mine_selected.png')} style={styles.iconStyle} />}
                     selected={this.state.selectedTab === 'mine'}
-                    onPress={() => this.setState({selectedTab: 'mine'})}
+                    onPress={() => this.setState({ selectedTab: 'mine' }) }
                 >
-                    <Mine/>
-                </TabNavigator.Item>
-                <TabNavigator.Item
-
-                    title="我的"
-                    renderIcon={() => <Image source={require('../../res/images/icon_tabbar_mine.png')}
-                                             style={styles.iconStyle}/>}
-                    renderSelectedIcon={() => <Image source={require('../../res/images/icon_tabbar_mine_selected.png')}
-                                                     style={styles.iconStyle}/>}
-                    selected={this.state.selectedTab === 'more'}
-                    onPress={() => this.setState({selectedTab: 'more'})}
-                >
-                    <More/>
+                    <Mine />
                 </TabNavigator.Item>
             </TabNavigator>
         );
