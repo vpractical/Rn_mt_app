@@ -55,7 +55,7 @@ export default class Home extends Component<Props> {
                placeholder="养生" style={styles.topInputStyle}></TextInput>
 
                <View style={{flexDirection:'row'}}>
-                   <Image source={require('../../res/images/icon_homepage_message.png')}  style={styles.navRightImg}/>
+                   <Image source={require('../../res/images/icon_homepage_message.png')} style={styles.navRightImg}/>
                    <Image source={require('../../res/images/icon_homepage_scan.png')} style={styles.navRightImg}/>
                </View>
            </View>
